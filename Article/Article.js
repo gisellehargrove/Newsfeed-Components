@@ -232,6 +232,3 @@ const articles = data.map((element) => {
 articles.forEach((element) => {
   document.querySelector('.articles').appendChild(element);
 });
-
-
-console.log('articles', articles);
