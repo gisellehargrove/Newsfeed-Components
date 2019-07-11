@@ -160,6 +160,8 @@ function componentCreator(inputObj) {
 
   // create h2 for the title
   const title = document.createElement('h2');
+  // set content
+  title.textContent = inputObj.title;
   // append to parent Div
   parentDiv.appendChild(title);
 
@@ -167,13 +169,21 @@ function componentCreator(inputObj) {
   const date = document.createElement('p');
   // give element a class .date
   date.classList.add('date');
+  // set content
+  date.textContent = inputObj.date;
   // append to parent div
   parentDiv.appendChild(date);
 
   // create 3 paragraph elements
   const paragraph1 = document.createElement('p');
+  // set content
+  paragraph1.textContent = inputObj.firstParagraph;
   const paragraph2 = document.createElement('p');
+  // set content
+  paragraph2.textContent = inputObj.secondParagraph;
   const paragraph3 = document.createElement('p');
+  // set content
+  paragraph3.textContent = inputObj.thirdParagraph;
 
   // append to parent Div
   parentDiv.appendChild(paragraph1);
@@ -193,12 +203,19 @@ function componentCreator(inputObj) {
   });
 
 
-  console.log(parentDiv, 'here is the parent div');
+  // console.log(parentDiv, 'here is the parent div');
   // return entire component
   return parentDiv;
 }
 
 
-data.forEach((element) => {
-  componentCreator(element);
+const articles = data.map((element) => {
+  return componentCreator(element);
 });
+
+articles.forEach((element) => {
+  document.querySelector('.articles').appendChild(element);
+});
+
+
+console.log('articles', articles);
