@@ -186,6 +186,10 @@ function componentCreator(inputObj) {
   expandButton.classList.add('expandButton');
   // append to parent Div
   parentDiv.appendChild(expandButton);
+  // add event listener to the expand button
+  expandButton.addEventListener('click', () => {
+    parentDiv.classList.toggle('article-open');
+  });
 
 
   console.log(parentDiv, 'here is the parent div');
