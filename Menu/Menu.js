@@ -51,11 +51,6 @@ let menuItems = [
 const menuCreator = (arr) => {
   // select the menu-button currently on the DOM
   const menuButton = document.querySelector('.menu-button');
-  // select the menu element
-  // const menu = document.querySelector('.menu');
-  // select the ul from the menu
-  // const ul = document.querySelector('ul');
-
 
   // create menu parent div
   const menu = document.createElement('div');
