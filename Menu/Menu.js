@@ -1,19 +1,19 @@
 
-const toggleMenu = () => {
-  // Toggle the "menu--open" class on your menu refence.
-  if(menu.classList.length === 1) {
-    menu.classList.add('menu--open');
-  } else {
-    menu.classList.remove('menu--open');
-  }
-}
-
-// Start Here: Create a reference to the ".menu" class
-const menu = document.getElementsByClassName('menu')[0];
-// create a reference to the ".menu-button" class
-const menuButton = document.getElementsByClassName('menu-button')[0];
-// Using your menuButton reference, add a click handler that calls toggleMenu
-menuButton.addEventListener('click', toggleMenu);
+// const toggleMenu = () => {
+//   // Toggle the "menu--open" class on your menu refence.
+//   if(menu.classList.length === 1) {
+//     menu.classList.add('menu--open');
+//   } else {
+//     menu.classList.remove('menu--open');
+//   }
+// }
+//
+// // Start Here: Create a reference to the ".menu" class
+// const menu = document.getElementsByClassName('menu')[0];
+// // create a reference to the ".menu-button" class
+// const menuButton = document.getElementsByClassName('menu-button')[0];
+// // Using your menuButton reference, add a click handler that calls toggleMenu
+// menuButton.addEventListener('click', toggleMenu);
 
 
 
@@ -49,5 +49,31 @@ let menuItems = [
 */
 
 const menuCreator = (arr) => {
-  
+  // select the menu-button currently on the DOM
+  const menuButton = document.querySelector('.menu-button');
+  // select the menu element
+  const menu = document.querySelector('.menu');
+  // select the ul from the menu
+  const ul = document.querySelector('ul');
+
+  // iterate over the arr
+  arr.forEach((element) => {
+    // create a new li for each element and set the text to it value
+    const menuItem = document.createElement('li')
+    // set text content
+    menuItem.textContent = element;
+    // select the ul element and append the menu Item
+    ul.appendChild(menuItem);
+  });
+
+  // add an event listener to the menu button
+  menuButton.addEventListener('click', () => {
+    console.log('yo')
+    menu.classList.toggle('menu--open');
+  });
+
+  // return menu component
+  return menu;
 }
+
+menuCreator(menuItems);
