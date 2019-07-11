@@ -194,6 +194,8 @@ function componentCreator(inputObj) {
   const expandButton = document.createElement('span');
   // give element a class of expandButton
   expandButton.classList.add('expandButton');
+  // set content
+  expandButton.textContent = 'expand';
   // append to parent Div
   parentDiv.appendChild(expandButton);
   // add event listener to the expand button
