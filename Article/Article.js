@@ -163,6 +163,9 @@ function componentCreator(inputObj) {
   // append to parent Div
   parentDiv.appendChild(title);
 
+  const date = document.createElement('p');
+  parentDiv.appendChild(date);
+
   // create 3 paragraph elements
   const paragraph1 = document.createElement('p');
   const paragraph2 = document.createElement('p');
