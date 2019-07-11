@@ -76,7 +76,6 @@ const menuCreator = (arr) => {
 
   // add an event listener to the menu button
   menuButton.addEventListener('click', () => {
-    console.log('yo')
     menu.classList.toggle('menu--open');
   });
 
