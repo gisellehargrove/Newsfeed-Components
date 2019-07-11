@@ -163,7 +163,11 @@ function componentCreator(inputObj) {
   // append to parent Div
   parentDiv.appendChild(title);
 
+  // create date element
   const date = document.createElement('p');
+  // give element a class .date
+  date.classList.add('date');
+  // append to parent div
   parentDiv.appendChild(date);
 
   // create 3 paragraph elements
@@ -178,6 +182,8 @@ function componentCreator(inputObj) {
 
   // create span for the expand button
   const expandButton = document.createElement('span');
+  // give element a class of expandButton
+  expandButton.classList.add('expandButton');
   // append to parent Div
   parentDiv.appendChild(expandButton);
 
