@@ -52,9 +52,22 @@ const menuCreator = (arr) => {
   // select the menu-button currently on the DOM
   const menuButton = document.querySelector('.menu-button');
   // select the menu element
-  const menu = document.querySelector('.menu');
+  // const menu = document.querySelector('.menu');
   // select the ul from the menu
-  const ul = document.querySelector('ul');
+  // const ul = document.querySelector('ul');
+
+
+  // create menu parent div
+  const menu = document.createElement('div');
+  // attach menu class to element
+  menu.classList.add('menu');
+
+  // create ul for menu items
+  const ul = document.createElement('ul');
+  // append ul to menu
+  menu.appendChild(ul);
+
+
 
   // iterate over the arr
   arr.forEach((element) => {
@@ -62,7 +75,7 @@ const menuCreator = (arr) => {
     const menuItem = document.createElement('li')
     // set text content
     menuItem.textContent = element;
-    // select the ul element and append the menu Item
+    // append the menu Item to the ul
     ul.appendChild(menuItem);
   });
 
@@ -71,6 +84,12 @@ const menuCreator = (arr) => {
     console.log('yo')
     menu.classList.toggle('menu--open');
   });
+
+  // attach menu to the DOM
+  const articlesElement = document.querySelector('.articles');
+  const parentElement = articlesElement.parentNode;
+  // insert the menu before the articles container
+  parentElement.insertBefore(menu, articlesElement);
 
   // return menu component
   return menu;
